@@ -1,0 +1,37 @@
+--- Phase 2: path parameters ---
+app.get('/api/activities/:id', (req, res) => {
+  const id = req.params.id;
+  res.json({ id: id });
+});
+// :id in the path declares a variable. Read it from req.params.id
+// Always a STRING, even when it looks like a number.
+// Required — /api/activities with no id won't match at all.
+
+
+--- Phase 2: setting status codes ---
+app.get('/api/missing', (req, res) => {
+  res.status(404).json({ error: 'Not found' });
+});
+// res.status() returns res, which is why .json() chains onto it.
+// Do this so errors come back as JSON like everything else —
+// Express's default 404 is an HTML page, which breaks an API.
+
+
+--- Phase 2: query parameters ---
+app.get('/api/search', (req, res) => {
+  const category = req.query.category;
+  res.json({ category: category });
+});
+// Nothing declared in the path. Express parses everything after
+// the ? into req.query automatically.
+// Optional — no query string means undefined, no error.
+
+
+--- Phase 2: the memory test route ---
+app.get('/api/greet/:name', (req, res) => {
+  const name = req.params.name;
+  res.json({ greeting: 'hello ' + name });
+});
+// Wrote this from memory to check I understood params.
+// Got it 80% right — missed the req.params line, which is exactly
+// the step that matters: the path declares it, req.params retrieves it.
