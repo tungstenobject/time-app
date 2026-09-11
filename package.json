@@ -1,0 +1,24 @@
+{
+  "name": "time-app",
+  "version": "1.0.0",
+  "description": "This app allows me to see where my time actually went without making time management a chore.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tungstenobject/time-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tungstenobject/time-app/issues"
+  },
+  "homepage": "https://github.com/tungstenobject/time-app#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
